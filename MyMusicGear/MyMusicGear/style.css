@@ -1,0 +1,192 @@
+* { margin: 0px; padding: 0px; }
+body {
+    font-family: "Lucida Grande";
+    font-size: 100%;
+    background: #F8F8FF;
+    background: url(images/bg.png) repeat;
+}
+.header {
+    width: 40%;
+    margin: 50px auto 0px;
+    color: white;
+    background: #5F9EA0;
+    text-align: center;
+    border: 1px solid #56739c;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+}
+
+h1,h2,h3 {
+    font-family: "Lucida Grande";
+    font-size: 250%;
+}
+
+h1 {
+    color: white;
+    background-color: #5F9EA0;
+}
+
+a {
+    font-size: 105%;
+}
+form.mainForm, .content {
+    width: 40%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 20px 20px 90px 20px;
+    border: 1px solid #56739c;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.innercontent {
+    width: 40%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 20px 20px 20px 20px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+.innerform {
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.input-group {
+    margin: 10px 0px 10px 0px;
+}
+.input-group label {
+    display: block;
+    text-align: left;
+    margin: 3px;
+}
+.input-group input.box {
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.input-group select{
+    width: 100%;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    height: 34px;
+    -webkit-appearance: menulist-button;
+    height: 40px;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(images/arrows.png) 96% / 5% no-repeat;
+}
+#user_type {
+    height: 40px;
+    width: 98%;
+    padding: 5px 10px;
+    background: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.btn {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: #5F9EA0;
+    border: none;
+    border-radius: 5px;
+}
+.error {
+    width: 92%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px solid #a94442;
+    color: #a94442;
+    background: #f2dede;
+    border-radius: 5px;
+    text-align: left;
+}
+.success {
+    color: #3c763d;
+    background: #dff0d8;
+    border: 1px solid #3c763d;
+    margin-bottom: 20px;
+    font-size: 60%;
+}
+.profile_info img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    float: left;
+}
+.profile_info div {
+    display: inline-block;
+    margin: 5px;
+}
+
+.profile_info:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Style the buttons inside the tab */
+.tablinksAdmin{
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: #003366;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Change background color of buttons on hover */
+.tablinksAdmin:hover {
+    background-color: #012a53;
+}
+
+/* Create an active/current tablink class */
+.tablinksAdmin.clicked {
+    background-color: #01264c;
+}
+
+.tablinks {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: #5F9EA0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Change background color of buttons on hover */
+.tablinks:hover {
+    background-color: #447879;
+}
+
+/* Create an active/current tablink class */
+.tablinks.clicked {
+    background-color: #417172;
+}
+
+
+.formtest {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
