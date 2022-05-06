@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="onko.css" type="text/css">
+
+    <title>Onko Team 14</title>
+</head>
+
+<body>
+    <!--NAV BAR-->
+    <nav class="nav-bar" id="nav">
+        <div class="header">
+            <div class="burger" id="burger-menu">
+                <div class="menu" id="line-one"></div>
+                <div class="menu" id="line-two"></div>
+                <div class="menu" id="line-three"></div>
+            </div>
+            <img src="Assets/onkot14test.png" alt="#" class="logo">
+        </div>
+        <ul class="links" id="link-list">
+            <li><a class="link-view" href="index.html">Home</a></li>
+            <li><a class="link-view" href="TheTeam.html">The Team</a></li>
+            <li><a class="link-view" href="Contributions.html">Our Contributions</a></li>
+            <li><a class="link-view" href="https://onkodicom.com.au/">OnkoDICOM</a></li>
+            <li><a class="link-view" href="https://github.com/didymo/OnkoDICOM/releases">Downloads</a></li>
+
+        </ul>
+    </nav>
+
+    <section class="item-container">
+
+        <h1 class=title>Our Contributions</h1>
+
+        <div class="line"></div>
+
+        <!--CONTENT-->
+        <section class="contact-section" style="max-height: 10000px;">
+
+            <!--DESIGN SECTION-->
+            <h3 style="text-align: center;">Background: Design Methodology and The Development Environment</h3>
+            <p style="padding: 0% 3% 1%; text-align: center;">
+                The OnkoDICOM project began in 2019. For Team 14, this meant working with already established design methologies and a <strong>large</strong> codebase.
+            </p>
+            <!--BUTTONS-->
+            <button class="collapsible">METHODOLOGY</button>
+            <div class="content">
+                <p>
+                    <h5><u>SCRUM</u></h5>
+                    The OnkoDICOM program was developed using the SCRUM project methodology. The main activities involved in this methodology are daily “stand-up” meetings, where each team member describes the work they will be doing that day, and weekly “sprints” (lists
+                    of tasks to be completed each week, broken down by tickets).
+
+                    <h5><u>Sprints</u></h5>
+                    Weekly sprints started and ended with a meeting with the team’s supervisors and clients, Ashley Maher and Dr. Andrew Miller. These meetings begun with the team covering the work completed in the previous sprint, and ended with the team outlining work
+                    that will be completed during the next sprint.
+
+                    <h5><u>Stand-Ups</u></h5>
+                    Daily stand-ups were conducted in a team Slack channel, as in-person stand-ups were rendered impractical by the COVID-19 pandemic. These stand-ups involved brief, one or two sentence messages from each team member on what tasks they will be working on
+                    that day.
+                </p>
+            </div>
+
+            <button class="collapsible">ENVIRONMENT</button>
+            <div class="content">
+                <p>
+
+                    <h5><u>Python/PySide6</u></h5>
+                    The OnkoDICOM program is written entirely in Python, using the PySide6 library for graphical user interface elements. As stated, the OnkoDICOM codebase was already large upon Team 14's project beginning as and such, the established language was to be
+                    used.
+
+                    <h5><u>SQLite</u></h5>
+                    SQLite was the main database language used by the OnkoDICOM program.
+
+                    <h5><u>Redmine</u></h5>
+                    Sprint tickets were managed within the web-based project management application Redmine. Weekly sprints and their subtasks would be uploaded into this workspace and their progress tracked. Redmine also housed important files for the team and other information
+                    such as meeting agendas and minutes.
+
+                    <h5><u>Slack</u></h5>
+                    The professional communication program Slack was utlisised for direct interaction between the product owner, SCRUM master and Team 14. The platform was also used as the place of organisation for additional meetings between the parties.
+
+
+                    <h5><u>Virtual machines</u></h5>
+                    Emulated computer systems allowed the team to operate and test the program on different operating systems.
+
+
+                    <h5><u>Github</u></h5>
+                    The version control system for the project which currently houses the OnkoDICOM program. The project was hosted on GitHub, and, at the request of the SCRUM master, each team could only create pull requests (which were used to add code and fix bugs), when
+                    they had a “token”. This token rotated between the teams as each team completed functionalities or created bug fixes that needed to be added to the main program. For each pull request one team made, the other two teams would test,
+                    review, suggest fixes, request changes, and ultimately approve the code.
+                </p>
+            </div>
+
+            <!--INDIVIDUAL PATIENT SECTION-->
+            <h3 style="text-align: center;">Individual Patient Curation</h3>
+            <p style="padding: 0% 3% 1%; text-align: justify;">
+                The following functions allow the user to perform various processes on individual patient files throughout their research. These functions interface with several DICOM files to extract and transform data.
+            </p>
+
+            <!--BUTTONS-->
+            <button class="collapsible">ISO2ROI</button>
+            <div class="content">
+                <p> This function interfaces with the RTDOSE file of a patient to extract radiation dose data, converts lines of isodose into ROIs and saves them into an associated RTSTRUCT file. The range of levels to convert isodoses into ROIs can be changed,
+                    with values in centiGray (cGy) or percentage of prescription dose. This required developing new functionality to convert coordinates to pixel values and vice versa to calculate coordinates of radiation dose values and generate contours
+                    around these values.
+                </p>
+                <br><a href="Assets/Onko/ISO2ROI.png">Example</a>
+            </div>
+
+            <button class="collapsible">SUV2ROI</button>
+            <div class="content">
+                <p> This function interfaces with DICOM PET files to extract PET scan data and other required information, converts this into units of Standardised Uptake Value, then calculates SUV level contours for integers (1, 2, 3, …). These are then
+                    turned into Regions of Interest (ROIs) and saved into DICOM RTSTRUCT files. This required developing new functionality to convert coordinates to pixel values and vice versa to calculate coordinates of radiation dose values and generate
+                    contours around these values. It also required mathematical operations to convert between pixel units and SUV units.
+                </p>
+                <br><a href="Assets/Onko/SUV2ROI.png">Example</a>
+            </div>
+
+            <button class="collapsible">DVH2RTDOSE</button>
+            <div class="content">
+                <p>This function interfaces with DICOM RTDOSE, RTPLAN, and RTSTRUCT files to extract radiation dose data and calculate a Dose Volume Histogram. This DVH data is then converted into a standardised format and saved back into the RTDOSE file.
+                    This required developing new functionality to convert DVH data into a standard format and writing this into DICOM RTDOSE files. This process is done automatically when DVH values are calculated, which is initiated manually by the user
+                    either once a patient has been loaded or when prompted during patient loading, as this process takes a long time. If DVH data is found inside an RTDOSE file when a file of this nature is opened, then DVH data is extracted from this
+                    file and displayed automatically.
+                </p>
+                <br><a href="Assets/Onko/DVH.png">Example</a>
+            </div>
+
+            <button class="collapsible">PYRAD2SR</button>
+            <div class="content">
+                <p>This function performs radiomics (a method that extracts features from medical images, known as radiomic features, that can aid a doctor in uncovering tumor patterns and characteristics that cannot be seen by the naked eye) and stores
+                    this data into a DICOM SR file. This required developing new functionality to generate DICOM SR files that are compliant to the existing standard, and storing radiomics data into these new SR files.
+                </p>
+                <br><a href="Assets/Onko/Pyrad2sr.png">Example</a>
+            </div>
+
+            <button class="collapsible">CLINICALDATA2SR</button>
+            <div class="content">
+                <p>This function allows the user to select a comma separated value (CSV) file containing a list of clinical data for different patients, matches the patient ID in the CSV file to the patient ID of the selected DICOM dataset, and extracts
+                    matching patient clinical data information from this CSV. This data is then saved into a newly-generated DICOM SR file, and linked to the patient’s dataset. The opposite can also be performed - extracting data from a DICOM SR file
+                    and saving it into a CSV file. This required developing new functionality to generate DICOM SR files, extract clinical data from a CSV file, and display this data.
+                </p>
+                <br><a href="Assets/Onko/Clinicalcsv.png">Example</a>
+            </div>
+
+            <!--BATCH SECTION-->
+            <h3 style="text-align: center;">Batch Processing</h3>
+            <p style="padding: 0% 3% 1%; text-align: justify;">The following functions allow the user to perform all of the above processes (and more!) for a directory of patients instead of individual patients. The user selects a directory containing DICOM datasets for multiple patients, selects what
+                processes they want to perform on this batch directory, sets process options, and the program performs the processes. Extra processes include ROI Name Cleaning and ROI Name to FMA ID.</p>
+
+            <button class="collapsible">ROI NAME CLEANING</button>
+            <div class="content">
+                <p>This function allows the user to rename ROIs to one of the standard organ names according to a CSV file located in the application’s directory, or delete an ROI. This requires loading each RTSTRUCT in the batch directory and listing each
+                    unique ROI name. If two ROIs share the same name, then this ROI is listed once and the datasets containing this ROI are displayed in a drop-down list. The same process is applied to each ROI of the same name in each dataset containing
+                    this ROI.
+                </p>
+                <br><a href="Assets/Onko/roiname.png">Example</a>
+            </div>
+
+            <button class="collapsible">ROI NAME TO FMA ID</button>
+            <div class="content">
+                <p>This function allows the user to rename ROIs from standard organ names to the corresponding Foundational Model of Anatomy (FMA) ID. This is done automatically for each ROI name that matches a standard organ name (according to a CSV file
+                    located in the application’s directory).
+                </p>
+                <br><a href="Assets/Onko/roifmaid.png">Example</a>
+            </div>
+
+            <!--WINDOWS EXE SECTION-->
+            <h3 style="text-align: center;">Windows Executable</h3>
+            <p style="padding: 0% 3% 1%; text-align: justify;">A batch script to compile OnkoDICOM from Python code into a Windows executable, and then package this executable into an installer was developed. This allows the product owner to quickly and easily generate program installers for Windows whenever
+                a change is made to the base code.
+            </p>
+
+            <button class="collapsible">INSTALLER</button>
+            <div class="content">
+                <p>OnkoDICOM is now in beta! A download for the latest release of can be found
+                    <a href="https://github.com/didymo/OnkoDICOM/tags">here.</a> Simply download the installer and follow the installation process!
+                </p>
+        </section>
+
+        <div class="line"></div>
+
+    </section>
+</body>
+<script src="burger.js"></script>
+
+</html>
